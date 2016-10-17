@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片轮播模拟</title>
+  <link rel="stylesheet" href="css/20161017.css">
+</head>
+<body>
+  <div class="box">
+    <img class="left" src="images/left.png" alt="" onclick="showLeft()">
+    <img class="right" src="images/right.png" alt="" onclick="showRight()">
+    <img id="pic" src="images/花.jpg" alt="">
+  </div>
+  <script type="text/javascript">
+    var picList = ['花.jpg', '耳机.jpg', '美女.jpg', '比基尼.jpg', '美女黑.jpg'];
+    // console.log(pic);
+    var i = 0;
+    function showRight() {
+      i = i + 1;
+      if(i > 4) {
+        i = 0;
+      }
+      document.getElementById('pic').src = "images/" + picList[i];
+    }
+
+    function showLeft() {
+      i = i - 1;
+      if(i == -1) {
+        i = 4;
+      }
+      document.getElementById('pic').src = "images/" + picList[i];
+    }
+  </script>
+</body>
+</html>
